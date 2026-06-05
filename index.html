@@ -328,16 +328,16 @@
       }
       .trust-badges {
         display: flex;
-        gap: 20px;
+        gap: 15px;
         flex-wrap: wrap;
       }
       .trust-badge {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         background: rgba(57, 181, 74, 0.12);
         border: 1px solid rgba(57, 181, 74, 0.3);
-        padding: 8px 14px;
+        padding: 6px 12px;
         border-radius: 8px;
         color: rgba(255, 255, 255, 0.88);
         font-size: 0.8rem;
@@ -532,8 +532,6 @@
         color: var(--grey);
         font-weight: 500;
       }
-      .about-content {
-      }
       .about-points {
         display: flex;
         flex-direction: column;
@@ -567,52 +565,6 @@
         font-size: 0.85rem;
         color: var(--grey);
         line-height: 1.6;
-      }
-      .timeline {
-        display: flex;
-        gap: 0;
-        margin-top: 32px;
-      }
-      .timeline-item {
-        flex: 1;
-        text-align: center;
-        position: relative;
-      }
-      .timeline-item::after {
-        content: "";
-        position: absolute;
-        top: 16px;
-        left: 50%;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, var(--green), var(--green-mid));
-      }
-      .timeline-item:last-child::after {
-        display: none;
-      }
-      .timeline-dot {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: var(--green);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 10px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: white;
-        position: relative;
-        z-index: 1;
-      }
-      .timeline-item h5 {
-        font-size: 0.78rem;
-        font-weight: 700;
-        color: var(--grey-deep);
-      }
-      .timeline-item p {
-        font-size: 0.72rem;
-        color: var(--grey);
       }
 
       /* SERVICES */
@@ -761,7 +713,7 @@
       }
       .stats-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 0;
         border: 1px solid var(--border);
         border-radius: 24px;
@@ -1277,8 +1229,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 48px;
       }
-      .contact-info {
-      }
       .contact-item {
         display: flex;
         gap: 16px;
@@ -1362,21 +1312,18 @@
         border-radius: 16px;
         overflow: hidden;
         border: 1px solid var(--border);
+        position: relative;
+        width: 100%;
         height: 200px;
-        background: linear-gradient(135deg, #e8f7ea, #c5eecc);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 8px;
-        color: var(--green-dark);
       }
-      .map-embed span {
-        font-size: 2rem;
-      }
-      .map-embed p {
-        font-size: 0.82rem;
-        font-weight: 600;
+      .map-embed iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
       }
 
       /* FOOTER */
@@ -1395,8 +1342,7 @@
         gap: 40px;
         margin-bottom: 48px;
       }
-      .footer-brand {
-      }
+
       .footer-logo {
         display: flex;
         align-items: center;
@@ -1459,8 +1405,6 @@
       }
       .footer-col ul li a:hover {
         color: var(--green);
-      }
-      .footer-newsletter {
       }
       .newsletter-form {
         display: flex;
@@ -1667,11 +1611,11 @@
         .stats-grid {
           grid-template-columns: repeat(3, 1fr);
         }
-        .stats-grid .stat-item:nth-child(3) {
+        .stats-grid .stat-item:nth-child(2) {
           border-right: none;
         }
-        .stats-grid .stat-item:nth-child(4),
-        .stats-grid .stat-item:nth-child(5) {
+        .stats-grid .stat-item:nth-child(3),
+        .stats-grid .stat-item:nth-child(4) {
           border-top: 1px solid var(--border);
         }
         .footer-top {
@@ -1679,6 +1623,12 @@
         }
         .testimonials-track {
           grid-template-columns: repeat(2, 1fr);
+        }
+        .contact-grid {
+          gap: 32px;
+        }
+        .contact-form {
+          padding: 28px;
         }
       }
       @media (max-width: 768px) {
@@ -1702,6 +1652,19 @@
         }
         .contact-grid {
           grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .contact-form {
+          padding: 22px 18px;
+          border-radius: 14px;
+        }
+        .contact-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1.1rem;
+        }
+        .map-embed {
+          height: 180px;
         }
         .blog-grid {
           grid-template-columns: 1fr;
@@ -1731,6 +1694,30 @@
         }
       }
 
+      @media (max-width: 480px) {
+        .contact-form {
+          padding: 18px 14px;
+        }
+        .contact-item {
+          gap: 12px;
+        }
+        .contact-detail h4 {
+          font-size: 0.85rem;
+        }
+        .contact-detail p {
+          font-size: 0.8rem;
+        }
+        .map-embed {
+          height: 160px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          padding: 10px 12px;
+          font-size: 0.85rem;
+        }
+      }
+
       /* COUNTER ANIMATION */
       @keyframes countUp {
         from {
@@ -1747,7 +1734,7 @@
     <nav id="navbar">
       <a href="#" class="nav-logo">
         <img
-          src="logo sign.png"
+          src="X:\A&S Taxation New Website\images\logo sign.png"
           alt="A&S Taxations Logo"
         />
       </a>
@@ -1755,7 +1742,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#blog">Blog</a></li>
+        <!-- <li><a href="#blog">Blog</a></li> -->
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact" class="nav-cta">Book Free Consult</a></li>
       </ul>
@@ -1768,7 +1755,7 @@
       <a href="#about" onclick="closeMobileNav()">About</a>
       <a href="#services" onclick="closeMobileNav()">Services</a>
       <a href="#why-us" onclick="closeMobileNav()">Why Us</a>
-      <a href="#blog" onclick="closeMobileNav()">Blog</a>
+      <!-- <a href="#blog" onclick="closeMobileNav()">Blog</a> -->
       <a href="#faq" onclick="closeMobileNav()">FAQ</a>
       <a href="#contact" onclick="closeMobileNav()">Book Free Consultation</a>
     </div>
@@ -1808,374 +1795,541 @@
           </div>
         </div>
         <div class="hero-right">
-          <div class="flowchart-container">
-            <div class="flow-row">
-              <div
-                class="flow-card interactive"
-                onclick="updateData(this, 'income')"
-              >
-                <div class="card-icon">💰</div>
-                <div class="card-info">
-                  <span class="card-label">Gross Income</span>
-                  <span class="card-value" id="val-income">$125,450</span>
-                </div>
-              </div>
-
-              <div
-                class="flow-card interactive"
-                onclick="updateData(this, 'deductions')"
-              >
-                <div class="card-icon">📉</div>
-                <div class="card-info">
-                  <span class="card-label">Deductions</span>
-                  <span class="card-value" id="val-deductions">$18,200</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="flow-connectors">
-              <div class="arrow-down"></div>
-              <div class="arrow-down"></div>
-            </div>
-
-            <div class="chart-wrapper">
-              <h4 class="chart-title">
-                Quarterly Financial Growth (Click Bars)
-              </h4>
-              <div class="bar-chart">
-                <div class="bar-container" onclick="boostBar(this, 0)">
-                  <div class="bar" style="height: 60%">
-                    <span class="bar-tooltip">$32.1k</span>
-                  </div>
-                  <span class="bar-label">Q1</span>
-                </div>
-                <div class="bar-container" onclick="boostBar(this, 1)">
-                  <div class="bar" style="height: 45%">
-                    <span class="bar-tooltip">$24.5k</span>
-                  </div>
-                  <span class="bar-label">Q2</span>
-                </div>
-                <div class="bar-container" onclick="boostBar(this, 2)">
-                  <div class="bar" style="height: 80%">
-                    <span class="bar-tooltip">$42.8k</span>
-                  </div>
-                  <span class="bar-label">Q3</span>
-                </div>
-                <div class="bar-container" onclick="boostBar(this, 3)">
-                  <div class="bar" style="height: 95%">
-                    <span class="bar-tooltip">$51.2k</span>
-                  </div>
-                  <span class="bar-label">Q4</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="flow-connectors">
-              <div class="arrow-down central"></div>
-            </div>
-
-            <div class="flow-row central">
-              <div class="flow-card highlight">
-                <div class="card-icon">🚀</div>
-                <div class="card-info">
-                  <span class="card-label">Maximized Tax Return</span>
-                  <span class="card-value pulse-text" id="val-return"
-                    >$8,432</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <!-- TAX CALCULATOR -->
           <style>
-            .flowchart-container {
-              background: rgba(10, 35, 20, 0.6);
-              border: 1px solid rgba(0, 230, 118, 0.2);
+            /* ── Tax Calculator Card ── */
+            .tc-card {
+              background: rgba(10, 35, 20, 0.75);
+              border: 1px solid rgba(0, 230, 118, 0.22);
               border-radius: 16px;
-              padding: 24px;
-              font-family:
-                system-ui,
-                -apple-system,
-                sans-serif;
-              box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-              backdrop-filter: blur(10px);
-              max-width: 550px;
+              padding: 22px;
+              width: 100%;
+              max-width: 520px;
               margin: 0 auto;
               box-sizing: border-box;
-              width: 100%;
+              backdrop-filter: blur(12px);
+              box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+              font-family: "DM Sans", sans-serif;
             }
-
-            .flow-row {
-              display: flex;
-              gap: 16px;
-              justify-content: space-between;
-            }
-
-            .flow-row.central {
-              justify-content: center;
-            }
-
-            .flow-card {
-              flex: 1;
-              background: rgba(255, 255, 255, 0.05);
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              border-radius: 12px;
-              padding: 16px;
+            .tc-header {
               display: flex;
               align-items: center;
-              gap: 12px;
-              transition: all 0.3s ease;
+              gap: 10px;
+              margin-bottom: 18px;
+            }
+            .tc-icon-box {
+              width: 38px;
+              height: 38px;
+              border-radius: 50%;
+              background: rgba(0, 230, 118, 0.12);
+              border: 1px solid rgba(0, 230, 118, 0.4);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.1rem;
+              flex-shrink: 0;
+            }
+            .tc-title {
+              font-family: "Raleway", sans-serif;
+              font-size: 1rem;
+              font-weight: 800;
+              color: #fff;
+              letter-spacing: 0.01em;
+            }
+            .tc-subtitle {
+              font-size: 0.7rem;
+              color: rgba(255, 255, 255, 0.45);
+              margin-top: 1px;
+            }
+            .tc-field {
+              margin-bottom: 10px;
+            }
+            .tc-label {
+              display: block;
+              font-size: 0.68rem;
+              font-weight: 600;
+              letter-spacing: 0.07em;
+              text-transform: uppercase;
+              color: rgba(255, 255, 255, 0.6);
+              margin-bottom: 5px;
+            }
+            .tc-label small {
+              text-transform: none;
+              letter-spacing: 0;
+              font-weight: 400;
+              color: rgba(255, 255, 255, 0.35);
+            }
+            .tc-input,
+            .tc-select {
+              width: 100%;
+              background: rgba(5, 20, 10, 0.7);
+              border: 1px solid rgba(0, 230, 118, 0.18);
+              border-radius: 8px;
+              color: #fff;
+              font-family: "DM Sans", sans-serif;
+              font-size: 0.88rem;
+              padding: 0.55rem 0.8rem;
+              outline: none;
+              appearance: none;
+              -webkit-appearance: none;
+              transition: border-color 0.2s;
               box-sizing: border-box;
             }
-
-            .flow-card.interactive {
-              cursor: pointer;
+            .tc-input:focus,
+            .tc-select:focus {
+              border-color: rgba(0, 230, 118, 0.5);
             }
-
-            .flow-card.interactive:hover {
-              background: rgba(0, 230, 118, 0.1);
-              border-color: #00e676;
-              transform: translateY(-3px);
+            .tc-input::placeholder {
+              color: rgba(255, 255, 255, 0.25);
             }
-
-            .flow-card.highlight {
-              background: linear-gradient(
-                135deg,
-                rgba(0, 230, 118, 0.2),
-                rgba(0, 100, 50, 0.4)
-              );
-              border: 1px solid #00e676;
-              box-shadow: 0 0 15px rgba(0, 230, 118, 0.2);
-              min-width: 260px;
-            }
-
-            .card-icon {
-              font-size: 24px;
-              background: rgba(255, 255, 255, 0.05);
-              padding: 8px;
-              border-radius: 8px;
-            }
-
-            .card-info {
-              display: flex;
-              flex-direction: column;
-            }
-
-            .card-label {
-              font-size: 12px;
-              color: #b0bec5;
-              text-transform: uppercase;
-              letter-spacing: 0.5px;
-            }
-
-            .card-value {
-              font-size: 20px;
-              font-weight: 700;
-              color: #ffffff;
-              margin-top: 2px;
-              transition: color 0.3s;
-            }
-
-            .pulse-text {
-              color: #00e676;
-            }
-
-            /* Flow Connectors */
-            .flow-connectors {
-              display: flex;
-              justify-content: space-around;
-              padding: 10px 0;
-              height: 25px;
-            }
-
-            .arrow-down {
-              width: 2px;
-              height: 100%;
-              background: linear-gradient(
-                to bottom,
-                rgba(0, 230, 118, 0.8),
-                rgba(0, 230, 118, 0.1)
-              );
+            .tc-select-wrap {
               position: relative;
             }
-
-            .arrow-down::after {
+            .tc-select-wrap::after {
               content: "";
               position: absolute;
-              bottom: 0;
-              left: -4px;
-              border-left: 5px solid transparent;
-              border-right: 5px solid transparent;
-              border-top: 6px solid rgba(0, 230, 118, 0.6);
+              right: 12px;
+              top: 50%;
+              transform: translateY(-50%);
+              border: 5px solid transparent;
+              border-top-color: #00e676;
+              pointer-events: none;
             }
-
-            .flow-connectors .central {
-              margin: 0 auto;
+            .tc-toggle-row {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 8px;
+              margin-bottom: 10px;
             }
-
-            /* Chart Elements */
-            .chart-wrapper {
-              background: rgba(0, 0, 0, 0.2);
-              border-radius: 12px;
-              padding: 16px;
-              border: 1px solid rgba(255, 255, 255, 0.05);
-              box-sizing: border-box;
-            }
-
-            .chart-title {
-              margin: 0 0 16px 0;
-              font-size: 13px;
-              color: #b0bec5;
+            .tc-toggle {
+              background: rgba(5, 20, 10, 0.7);
+              border: 1px solid rgba(0, 230, 118, 0.18);
+              border-radius: 8px;
+              color: rgba(255, 255, 255, 0.45);
+              font-family: "DM Sans", sans-serif;
+              font-size: 0.8rem;
               font-weight: 500;
-              text-align: center;
-            }
-
-            .bar-chart {
-              display: flex;
-              justify-content: space-around;
-              align-items: flex-end;
-              height: 120px;
-              padding-top: 15px;
-            }
-
-            .bar-container {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              width: 45px;
-              height: 100%;
-              justify-content: flex-end;
+              padding: 0.5rem;
               cursor: pointer;
+              text-align: center;
+              transition: all 0.2s;
             }
-
-            .bar {
+            .tc-toggle.active {
+              background: rgba(0, 230, 118, 0.12);
+              border-color: #00e676;
+              color: #00e676;
+            }
+            .tc-row2 {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px;
+            }
+            .tc-prof-note {
+              display: none;
+              font-size: 0.68rem;
+              color: #00e676;
+              background: rgba(0, 230, 118, 0.08);
+              border: 1px solid rgba(0, 230, 118, 0.3);
+              border-radius: 6px;
+              padding: 5px 9px;
+              margin-top: -4px;
+              margin-bottom: 10px;
+              line-height: 1.5;
+            }
+            .tc-prof-note.visible {
+              display: block;
+            }
+            .tc-btn {
               width: 100%;
-              background: linear-gradient(to top, #00a550, #00e676);
-              border-radius: 4px 4px 0 0;
-              position: relative;
-              transition: height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            }
-
-            .bar-container:hover .bar {
-              filter: brightness(1.2);
-              box-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
-            }
-
-            .bar-tooltip {
-              position: absolute;
-              top: -22px;
-              left: 50%;
-              transform: translateX(-50%);
-              font-size: 11px;
-              background: #111;
+              background: #39b54a;
+              border: none;
+              border-radius: 8px;
               color: #fff;
-              padding: 2px 6px;
-              border-radius: 4px;
+              font-family: "Raleway", sans-serif;
+              font-size: 0.85rem;
+              font-weight: 800;
+              letter-spacing: 0.04em;
+              padding: 0.7rem;
+              cursor: pointer;
+              transition:
+                background 0.2s,
+                transform 0.1s;
+              margin-top: 4px;
+            }
+            .tc-btn:hover {
+              background: #2a8a38;
+            }
+            .tc-btn:active {
+              transform: scale(0.98);
+            }
+            .tc-results {
+              margin-top: 12px;
+              background: rgba(0, 0, 0, 0.25);
+              border: 1px solid rgba(0, 230, 118, 0.15);
+              border-radius: 8px;
+              overflow: hidden;
+              display: none;
+            }
+            .tc-results.visible {
+              display: block;
+            }
+            .tc-row {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0.55rem 0.9rem;
+              border-bottom: 1px solid rgba(0, 230, 118, 0.1);
+              font-size: 0.8rem;
+            }
+            .tc-row:last-child {
+              border-bottom: none;
+            }
+            .tc-rl {
+              color: rgba(255, 255, 255, 0.55);
+            }
+            .tc-rv {
+              font-weight: 600;
+              font-size: 0.85rem;
+              color: #fff;
+            }
+            .tc-rv.green {
+              color: #00e676;
+            }
+            .tc-row.hi {
+              background: rgba(0, 230, 118, 0.1);
+            }
+            .tc-row.hi .tc-rl {
+              color: #fff;
               font-weight: 600;
             }
-
-            .bar-label {
-              margin-top: 8px;
-              font-size: 11px;
-              color: #78909c;
+            .tc-row.hi .tc-rv {
+              font-family: "Raleway", sans-serif;
+              font-size: 1rem;
+              font-weight: 800;
+              color: #00e676;
             }
-
-            /* --- MOBILE RESPONSIVE MEDIA QUERIES --- */
-            @media (max-width: 480px) {
-              .flowchart-container {
-                padding: 16px;
-              }
-
-              .flow-row {
-                flex-direction: column;
-                gap: 12px;
-              }
-
-              .flow-card {
-                width: 100%;
-              }
-
-              .flow-card.highlight {
-                min-width: 100%;
-              }
-
-              /* Hides dual arrows on mobile layout to maintain flow integrity */
-              .flow-connectors:first-of-type {
-                height: 35px;
-                flex-direction: column;
-                align-items: center;
-              }
-
-              .flow-connectors:first-of-type .arrow-down:last-child {
-                display: none;
-              }
-
-              .bar-container {
-                width: 35px; /* Narrows tracking width to prevent screen clipping */
-              }
-
-              .card-value {
-                font-size: 18px;
+            .tc-disclaimer {
+              font-size: 0.64rem;
+              color: rgba(255, 255, 255, 0.3);
+              margin-top: 8px;
+              text-align: center;
+              line-height: 1.5;
+            }
+            @media (max-width: 600px) {
+              .tc-row2 {
+                grid-template-columns: 1fr;
               }
             }
           </style>
 
+          <div class="tc-card">
+            <div class="tc-header">
+              <div class="tc-icon-box">🧮</div>
+              <div>
+                <div class="tc-title">Tax Calculator</div>
+                <div class="tc-subtitle">
+                  FY 2024–25 · Australian Tax Rules · Super Guarantee 11.5%
+                </div>
+              </div>
+            </div>
+
+            <!-- Residency -->
+            <div class="tc-field">
+              <div class="tc-label">Residency Status</div>
+              <div class="tc-toggle-row" id="tc-res-toggle">
+                <button
+                  class="tc-toggle active"
+                  data-res="resident"
+                  onclick="tcSetRes(this)"
+                >
+                  🇦🇺 Resident
+                </button>
+                <button
+                  class="tc-toggle"
+                  data-res="non-resident"
+                  onclick="tcSetRes(this)"
+                >
+                  ✈️ Non-Resident
+                </button>
+              </div>
+            </div>
+
+            <!-- Income -->
+            <div class="tc-field">
+              <label class="tc-label" for="tc-income"
+                >Gross Annual Income ($)</label
+              >
+              <input
+                class="tc-input"
+                type="number"
+                id="tc-income"
+                placeholder="e.g. 85,000"
+                min="0"
+                step="1000"
+              />
+            </div>
+
+            <!-- Profession -->
+            <div class="tc-field">
+              <label class="tc-label" for="tc-prof"
+                >Profession / Occupation</label
+              >
+              <div class="tc-select-wrap">
+                <select
+                  class="tc-select"
+                  id="tc-prof"
+                  onchange="tcOnProfChange()"
+                >
+                  <option value="general">General Employee</option>
+                  <option value="medical">
+                    Medical Professional (Doctor / Specialist)
+                  </option>
+                  <option value="nurse">Nurse / Paramedic</option>
+                  <option value="teacher">Teacher / Educator</option>
+                  <option value="tradie">
+                    Tradesperson (Plumber, Electrician…)
+                  </option>
+                  <option value="farmer">Primary Producer / Farmer</option>
+                  <option value="startup">
+                    Startup / Early-Stage Business
+                  </option>
+                  <option value="freelance">Freelancer / Sole Trader</option>
+                  <option value="mining">Mining / Resources Worker</option>
+                </select>
+              </div>
+              <div class="tc-prof-note" id="tc-prof-note"></div>
+            </div>
+
+            <!-- Expenses + Super side by side -->
+            <div class="tc-row2">
+              <div class="tc-field">
+                <label class="tc-label" for="tc-exp"
+                  >Work-Related Expenses ($)</label
+                >
+                <input
+                  class="tc-input"
+                  type="number"
+                  id="tc-exp"
+                  placeholder="e.g. 3,000"
+                  min="0"
+                  step="100"
+                />
+              </div>
+              <div class="tc-field">
+                <label class="tc-label" for="tc-super"
+                  >Voluntary Super ($) <small>pre-tax, cap $30k</small></label
+                >
+                <input
+                  class="tc-input"
+                  type="number"
+                  id="tc-super"
+                  placeholder="e.g. 5,000"
+                  min="0"
+                  step="500"
+                />
+              </div>
+            </div>
+
+            <button class="tc-btn" onclick="tcCalculate()">
+              CALCULATE MY TAX →
+            </button>
+
+            <!-- Results -->
+            <div class="tc-results" id="tc-results">
+              <div class="tc-row">
+                <span class="tc-rl">Gross Income</span
+                ><span class="tc-rv" id="tc-r-gross">—</span>
+              </div>
+              <div class="tc-row">
+                <span class="tc-rl">Taxable Income</span
+                ><span class="tc-rv" id="tc-r-taxable">—</span>
+              </div>
+              <div class="tc-row">
+                <span class="tc-rl">Income Tax</span
+                ><span class="tc-rv" id="tc-r-tax">—</span>
+              </div>
+              <div class="tc-row">
+                <span class="tc-rl">Medicare Levy (2%)</span
+                ><span class="tc-rv" id="tc-r-med">—</span>
+              </div>
+              <div class="tc-row">
+                <span class="tc-rl">LITO Offset</span
+                ><span class="tc-rv green" id="tc-r-lito">—</span>
+              </div>
+              <div class="tc-row">
+                <span class="tc-rl"
+                  >Super Guarantee (11.5% — employer-paid on top)</span
+                ><span class="tc-rv" id="tc-r-sg">—</span>
+              </div>
+              <div class="tc-row hi">
+                <span class="tc-rl">Est. Refund / Owing</span
+                ><span class="tc-rv" id="tc-r-net">—</span>
+              </div>
+              <div class="tc-row">
+                <span class="tc-rl">Effective Tax Rate</span
+                ><span class="tc-rv" id="tc-r-rate">—</span>
+              </div>
+              <div class="tc-row">
+                <span class="tc-rl">Monthly Take-Home</span
+                ><span class="tc-rv green" id="tc-r-mo">—</span>
+              </div>
+            </div>
+
+            <div class="tc-disclaimer">
+              Estimates only · Consult an A&amp;S Taxations adviser for
+              personalised advice
+            </div>
+          </div>
+
           <script>
-            const financialData = {
-              income: 125450,
-              deductions: 18200,
-              quarterly: [32100, 24500, 42800, 51200],
+            // ── Tax Calculator Logic ────────────────────────────────────
+            let tcRes = "resident";
+
+            function tcSetRes(btn) {
+              document
+                .querySelectorAll("#tc-res-toggle .tc-toggle")
+                .forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+              tcRes = btn.dataset.res;
+            }
+
+            const tcProfData = {
+              general: { note: "", boost: 0, maxExp: 300 },
+              medical: {
+                note: "✦ Registration fees, CPD & PPE are deductible. FBT exemptions may apply.",
+                boost: 0.08,
+                maxExp: 25000,
+              },
+              nurse: {
+                note: "✦ Uniform, laundering & shift-allowance deductions apply.",
+                boost: 0.05,
+                maxExp: 5000,
+              },
+              teacher: {
+                note: "✦ Educator expense deductions + resource/material costs.",
+                boost: 0.05,
+                maxExp: 20000,
+              },
+              tradie: {
+                note: "✦ Tools, vehicle, PPE & apprentice incentives reduce taxable income.",
+                boost: 0.1,
+                maxExp: 30000,
+              },
+              farmer: {
+                note: "✦ Primary producer averaging + Farm Management Deposits may apply.",
+                boost: 0.12,
+                maxExp: 100000,
+              },
+              startup: {
+                note: "✦ R&D tax offset (up to 43.5%), loss carry-back & asset write-off.",
+                boost: 0.15,
+                maxExp: 150000,
+              },
+              freelance: {
+                note: "✦ Home office, equipment & super contributions all deductible.",
+                boost: 0.09,
+                maxExp: 20000,
+              },
+              mining: {
+                note: "✦ FIFO allowances, protective gear & remote-area concessions apply.",
+                boost: 0.08,
+                maxExp: 15000,
+              },
             };
 
-            function recalculateReturn() {
-              const baseReturn =
-                financialData.income * 0.05 + financialData.deductions * 0.12;
-              const quarterlyBonus =
-                financialData.quarterly.reduce((a, b) => a + b, 0) * 0.01;
-              const totalReturn = Math.round(baseReturn + quarterlyBonus);
-
-              const returnEl = document.getElementById("val-return");
-              returnEl.textContent = "$" + totalReturn.toLocaleString();
-
-              returnEl.style.color = "#fff";
-              setTimeout(() => {
-                returnEl.style.color = "#00e676";
-              }, 300);
+            function tcOnProfChange() {
+              const pd = tcProfData[document.getElementById("tc-prof").value];
+              const el = document.getElementById("tc-prof-note");
+              if (pd.note) {
+                el.textContent = pd.note;
+                el.classList.add("visible");
+              } else el.classList.remove("visible");
             }
 
-            function updateData(element, type) {
-              if (type === "income") {
-                financialData.income = Math.floor(
-                  Math.random() * (160000 - 110000) + 110000,
-                );
-                document.getElementById("val-income").textContent =
-                  "$" + financialData.income.toLocaleString();
-              } else if (type === "deductions") {
-                financialData.deductions = Math.floor(
-                  Math.random() * (25000 - 12000) + 12000,
-                );
-                document.getElementById("val-deductions").textContent =
-                  "$" + financialData.deductions.toLocaleString();
-              }
-              recalculateReturn();
+            // FY 2024-25 brackets
+            const tcResBrackets = [
+              { min: 0, max: 18200, rate: 0, base: 0 },
+              { min: 18201, max: 45000, rate: 0.19, base: 0 },
+              { min: 45001, max: 135000, rate: 0.325, base: 5092 },
+              { min: 135001, max: 190000, rate: 0.37, base: 34237 },
+              { min: 190001, max: Infinity, rate: 0.45, base: 54737 },
+            ];
+            const tcNonResBrackets = [
+              { min: 0, max: 135000, rate: 0.325, base: 0 },
+              { min: 135001, max: 190000, rate: 0.37, base: 43875 },
+              { min: 190001, max: Infinity, rate: 0.45, base: 64182.5 },
+            ];
+
+            function tcTax(t, isRes) {
+              const table = isRes ? tcResBrackets : tcNonResBrackets;
+              for (const b of table)
+                if (t >= b.min && t <= b.max)
+                  return b.base + (t - (b.min - 1)) * b.rate;
+              return 0;
             }
 
-            function boostBar(container, index) {
-              const bar = container.querySelector(".bar");
-              const tooltip = container.querySelector(".bar-tooltip");
+            function tcLITO(t) {
+              if (t <= 37500) return 700;
+              if (t <= 45000) return 700 - (t - 37500) * (100 / 7500);
+              if (t <= 66667) return 325 - (t - 45000) * (325 / 21667);
+              return 0;
+            }
 
-              const newHeightPercent = Math.floor(
-                Math.random() * (98 - 40) + 40,
+            function tcMedicare(t, isRes) {
+              if (!isRes) return 0;
+              if (t <= 26000) return 0;
+              if (t <= 32500) return (t - 26000) * 0.1;
+              return t * 0.02;
+            }
+
+            function tcCalculate() {
+              const income =
+                parseFloat(document.getElementById("tc-income").value) || 0;
+              const exp =
+                parseFloat(document.getElementById("tc-exp").value) || 0;
+              const superV = Math.min(
+                parseFloat(document.getElementById("tc-super").value) || 0,
+                30000,
               );
-              const newValAmount = Math.round((newHeightPercent / 100) * 55000);
+              const prof = document.getElementById("tc-prof").value;
+              const isRes = tcRes === "resident";
+              const pd = tcProfData[prof];
 
-              financialData.quarterly[index] = newValAmount;
+              const totalDed = Math.min(
+                Math.min(exp, pd.maxExp) + income * pd.boost + superV,
+                income * 0.6,
+              );
+              const taxable = Math.max(0, income - totalDed);
+              const rawTax = tcTax(taxable, isRes);
+              const medicare = tcMedicare(taxable, isRes);
+              const lito = isRes ? tcLITO(taxable) : 0;
+              const totalTax = Math.max(0, rawTax - lito) + medicare;
+              const sg = income * 0.115;
+              const netResult = income * 0.3 - totalTax;
+              const effective = income > 0 ? (totalTax / income) * 100 : 0;
+              const monthly = (income - totalTax) / 12;
 
-              bar.style.height = newHeightPercent + "%";
-              tooltip.textContent =
-                "$" + (newValAmount / 1000).toFixed(1) + "k";
+              const fmt = (v) =>
+                "$" + Math.abs(Math.round(v)).toLocaleString("en-AU");
 
-              recalculateReturn();
+              document.getElementById("tc-r-gross").textContent = fmt(income);
+              document.getElementById("tc-r-taxable").textContent =
+                fmt(taxable);
+              document.getElementById("tc-r-tax").textContent = fmt(rawTax);
+              document.getElementById("tc-r-med").textContent = fmt(medicare);
+              document.getElementById("tc-r-lito").textContent =
+                lito > 0 ? "−" + fmt(lito) : "$0";
+              document.getElementById("tc-r-sg").textContent = fmt(sg);
+              document.getElementById("tc-r-rate").textContent =
+                effective.toFixed(1) + "%";
+              document.getElementById("tc-r-mo").textContent = fmt(monthly);
+
+              const netEl = document.getElementById("tc-r-net");
+              netEl.textContent =
+                (netResult >= 0 ? "▲ Refund " : "▼ Owing ") + fmt(netResult);
+              netEl.style.color = netResult >= 0 ? "#00e676" : "#ff6b6b";
+
+              document.getElementById("tc-results").classList.add("visible");
             }
           </script>
         </div>
@@ -2202,7 +2356,7 @@
                 <div>
                   <h4>Our Mission</h4>
                   <p>
-                    To simplify taxation for Australians — ensuring maximum
+                    To simplify taxation for Australians, ensuring maximum
                     returns, full compliance, and financial peace of mind for
                     every client.
                   </p>
@@ -2228,28 +2382,6 @@
                     real Australians.
                   </p>
                 </div>
-              </div>
-            </div>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-dot">1</div>
-                <h5>Founded</h5>
-                <p>2022</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot">2</div>
-                <h5>100+ Clients</h5>
-                <p>2024</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot">3</div>
-                <h5>$1M Saved</h5>
-                <p>2025</p>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot">4</div>
-                <h5>200+ Clients</h5>
-                <p>2026</p>
               </div>
             </div>
           </div>
@@ -2369,16 +2501,11 @@
 
                 <div class="stats-stack">
                   <div class="stat-block">
-                    <span class="stat-num">98%</span>
+                    <span class="stat-num">100%</span>
                     <span class="stat-desc">Client Satisfaction</span>
                     <div class="stat-bar-track">
                       <div class="stat-bar-fill" style="width: 98%"></div>
                     </div>
-                  </div>
-
-                  <div class="stat-block">
-                    <span class="stat-num">500+</span>
-                    <span class="stat-desc">Returns Filed</span>
                   </div>
                 </div>
               </div>
@@ -2391,11 +2518,6 @@
                 >
                   Unlock Step 2 Now
                 </button>
-
-                <div class="savings-badge-glass">
-                  <span class="badge-amount">$1M+</span>
-                  <span class="badge-tag">Tax Savings Assisted</span>
-                </div>
               </div>
             </div>
 
@@ -2865,31 +2987,15 @@
           </div>
           <div class="service-card">
             <div class="service-icon">📊</div>
-            <h3 class="service-title">BAS Preparation & Lodgement</h3>
+            <h3 class="service-title">BAS, Bookkeeping & Payroll</h3>
             <p class="service-desc">
-              Accurate, timely BAS preparation and lodgement to keep you
-              compliant with ATO requirements.
+              End-to-end financial compliance — accurate BAS preparation,
+              organised bookkeeping, and full payroll processing including STP
+              reporting, superannuation, and leave entitlements.
             </p>
             <a href="#contact" class="service-link">Learn More →</a>
           </div>
-          <div class="service-card">
-            <div class="service-icon">📚</div>
-            <h3 class="service-title">Bookkeeping Services</h3>
-            <p class="service-desc">
-              Professional bookkeeping services to keep your financials
-              organised, accurate, and audit-ready.
-            </p>
-            <a href="#contact" class="service-link">Learn More →</a>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">👥</div>
-            <h3 class="service-title">Payroll Processing</h3>
-            <p class="service-desc">
-              End-to-end payroll processing including STP reporting,
-              superannuation, leave entitlements and more.
-            </p>
-            <a href="#contact" class="service-link">Learn More →</a>
-          </div>
+
           <div class="service-card">
             <div class="service-icon">🏛️</div>
             <h3 class="service-title">Company Registration</h3>
@@ -2918,7 +3024,7 @@
             </p>
             <a href="#contact" class="service-link">Learn More →</a>
           </div>
-          <div class="service-card">
+          <!-- <div class="service-card">
             <div class="service-icon">🗓️</div>
             <h3 class="service-title">Business Advisory</h3>
             <p class="service-desc">
@@ -2926,7 +3032,7 @@
               cash flow, and achieve sustainable growth.
             </p>
             <a href="#contact" class="service-link">Learn More →</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -3006,7 +3112,7 @@
         <div class="section-header reveal">
           <div class="section-tag">Our Track Record</div>
           <h2 class="section-title">
-            Real Results for <span class="accent">Real Australians</span>
+            Real Results from <span class="accent">our previous clients</span>
           </h2>
         </div>
         <div class="stats-grid reveal">
@@ -3014,19 +3120,9 @@
             <div class="stat-num" data-count="1000" data-suffix="+">1000+</div>
             <div class="stat-label">Successful Tax Filings</div>
           </div>
+
           <div class="stat-item">
-            <div
-              class="stat-num"
-              data-prefix="$"
-              data-count="2"
-              data-suffix="M+"
-            >
-              $1M+
-            </div>
-            <div class="stat-label">Tax Savings Assisted</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num" data-count="98" data-suffix="%">98%</div>
+            <div class="stat-num" data-count="100" data-suffix="%">100%</div>
             <div class="stat-label">Client Retention Rate</div>
           </div>
           <div class="stat-item">
@@ -3409,16 +3505,12 @@
               <div class="contact-detail">
                 <h4>Business Hours</h4>
                 <p>Monday – Friday: 9:00am – 6:00pm</p>
-                <p>Saturday: 10:00am – 2:00pm</p>
-                <p>Sunday: Closed</p>
+                <p>Saturday-Sunday: Closed</p>
               </div>
             </div>
             <div class="map-embed">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.8577669386395!2d151.20926297534592!3d-33.867556273227095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12af6cf61a3b87%3A0x31e096ac1a498e4b!2sA%20%26%20S%20Taxation%20%26%20Business%20Services%20Pty%20Ltd!5e0!3m2!1sen!2sbd!4v1780143069511!5m2!1sen!2sbd"
-                width="580"
-                height="200"
-                style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
@@ -3555,7 +3647,6 @@
               <li><a href="#services">Bookkeeping</a></li>
               <li><a href="#services">Payroll</a></li>
               <li><a href="#services">SMSF</a></li>
-              <li><a href="#services">Crypto Tax</a></li>
             </ul>
           </div>
           <div class="footer-col footer-newsletter">
@@ -3799,7 +3890,7 @@
 
           try {
             await fetch(
-              "https://script.google.com/macros/s/AKfycbyPZ7PRYHH2gqWrvuZhNnx4rg8oQHDwBqnAtjkMx4zyMbCDb_zDaugc92z2h0VxO5jO6g/exec",
+              "https://script.google.com/macros/s/AKfycbwvFhblMDWjFHtvyE-XbrJxuw6_thL_Jscvp_WrH5d0sRaq8d5Uf1XuJ2tMVLLNtV4_9g/exec",
               {
                 method: "POST",
                 body: JSON.stringify(data),
